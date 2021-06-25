@@ -265,6 +265,12 @@ function checkScene(currentScene) {
             client.publish('zigbee2mqtt/'+ friendlyNames[i] +'/set', '{"brightness" : 0, "color" : ' + hueOutput+ '}');
         }
     }
+    if (currentScene === 29) {
+        hueOutput = JSON.stringify({"r": 255, "g": 255, "b": 255});
+        for (i = 0; i < friendlyNames.length; i++) {
+            client.publish('zigbee2mqtt/'+ friendlyNames[i] +'/set', '{"brightness" : 255, "color" : ' + hueOutput+ ', "transition" : 5}');
+        }
+    }
 }
 
 let colorOn = true;

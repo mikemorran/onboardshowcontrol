@@ -5,10 +5,13 @@ function checkScene() {
     let timeout4 = null;
     //Load Show
     if (currentScene === 0) {
+        titleCardDraw = false;
         sound1.stop();
     }
     //Pre Show Sound
     if (currentScene === 1) {
+        opacity = 255;
+        titleCardDraw = true;
         mic.close();
         sound1.volume.linearRampTo(-200, 0);
         sound1.volume.linearRampTo(-20, 5);
@@ -18,6 +21,10 @@ function checkScene() {
     }
     //Pre Show Sound Fade, Video Start
     if (currentScene === 2) {
+        titleCardDrawFadeout = true;
+        setTimeout(() => {
+            titleCardDraw = false;
+        }, 6000);
         sound1.volume.linearRampTo(-96, 5);
         sound2.stop();
         sound2.volume.linearRampTo(0, 0);
@@ -228,6 +235,12 @@ function checkScene() {
     }
     if (currentScene === 28) {
         videoDraw = true;
+    }
+    if (currentScene === 29) {
+        opacity = 0;
+        videoDraw = false;
+        endingCardDraw = true;
+        endingCardDrawFadeup = true;
     }
     //Timeout Clearance 
     if (currentScene !== 10) {

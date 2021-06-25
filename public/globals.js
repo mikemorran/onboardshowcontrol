@@ -21,6 +21,13 @@ let font;
 let speechSynth = window.speechSynthesis;
 let utteranceScene = 0;
 let speechSynthComplete = false;
+let titleCardDraw = false;
+let titleCardDrawFadeout = false;
+let opacity = 255;
+let intervalSet = false;
+let intervalID;
+let endingCardDraw = false;
+let endingCardDrawFadeup = false;
 let utterances = [
     "Good morning Michael. I am your virtual health assistant from Amazon Care. It is time to begin your daily routine. Please make sure your biometric sensors are active.",
     "Now receiving data. You are currently subscribed to three morning routines. We do not advise that you attempt more than one routine at a time.",
