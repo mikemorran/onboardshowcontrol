@@ -10,6 +10,7 @@ function checkScene() {
     //Pre Show Sound
     if (currentScene === 1) {
         mic.close();
+        sound1.volume.linearRampTo(-200, 0);
         sound1.volume.linearRampTo(-20, 5);
         sound1.start();
         sound1.loop = true;
@@ -27,6 +28,15 @@ function checkScene() {
         setTimeout(() => {
             videoDraw = true;
         }, 5000);
+        setTimeout(() => {
+            alarm.volume.linearRampTo(-5, 0);
+            alarm.start();
+            alarm.loop = false;
+            setTimeout(() => {
+                alarm.volume.linearRampTo(-200, 2);
+                alarm.stop();
+            }, 7000);
+        }, 10000);
     }
     //Morning Sound
     if (currentScene === 3) {
@@ -128,9 +138,9 @@ function checkScene() {
         startLights = true;
     }
     //Play first memory transition and start memory sound
-    if (currentScene === 18 || currentScene === 22) {
+    if (currentScene === 18 || currentScene === 23) {
         p3q2.volume.linearRampTo(-200, 0);
-        threshold = -45;
+        threshold = -65;
         startLights = false;
         p3q2.start();
         p3q2.loop = true;
@@ -156,25 +166,68 @@ function checkScene() {
     }
     //Epic sound
     if (currentScene === 21) {
-        p3q3.volume.linearRampTo(-10, 0)
+        p3q3.volume.linearRampTo(-5, 0)
         startlights = false;
         p3q3.start();
         setTimeout(() => {
-            console.log("sound off");
-            p3q3.stop();
             currentScene += 1;
             console.log('current scene : ' + currentScene);
             socket.emit('scenechange', currentScene);
             checkScene();
-        }, 25000);
+            setTimeout(() => {
+                p3q3.stop();
+                console.log("sound off");
+            }, 3500);
+        }, 20000);
     }
-    //Emril Legasse
-    if (currentScene === 23){
+    if (currentScene === 23) {
+        setTimeout(() => {
+            mic.close();
+            currentScene += 1;
+            socket.emit('scenechange', currentScene);
+            checkScene();
+        }, 47000)
+    }
+    //Emril Legasse Again
+    if (currentScene === 24){
+        buffering = true;
+        videoDraw = false;
         startLights = false;
         p3q2.stop();
-        p3q4.volume.linearRampTo(-10, 0);
+        p3q4.volume.linearRampTo(5, 0);
         p3q4.start();
         p3q4.loop = false;
+        setTimeout(() => {
+            drawResults = false;
+            videoDraw = false;
+            buffering = false;
+            currentScene += 1;
+            socket.emit('scenechange', currentScene);
+            buffering = false;
+            drawResults = true;
+            currentScene += 1;
+            socket.emit('scenechange', currentScene);
+            if (currentScene === 26) {
+                timeout2 = setTimeout(() => {
+                    currentScene += 1;
+                    socket.emit('scenechange', currentScene);
+                    if (currentScene === 27) {
+                        timeout3 = setTimeout(() => {
+                            mic.close()
+                            drawResults = false;
+                            videoReset = false;
+                            noCanvas();
+                            let videoPath = 'assets/' + videoToLoad +'.mp4'
+                            vid = createVideo(videoPath, vidLoaded);
+                            document.getElementById('videoCaptureDiv').style.display = 'none';
+                        }, 1000);
+                    }
+                }, 3000);
+            }
+        }, 22250);
+    }
+    if (currentScene === 28) {
+        videoDraw = true;
     }
     //Timeout Clearance 
     if (currentScene !== 10) {
@@ -183,11 +236,15 @@ function checkScene() {
     if (currentScene !== 11) {
         clearTimeout(timeout2);
     }
-    if (currentScene !== 12) {
+    if (currentScene !== 12 || currentScene !== 26) {
         clearTimeout(timeout3);
+    }
+    if (currentScene !== 7) {
+        prompt2Draw = false;
     }
     //Reset Canvas
     if (currentScene >= 13) {
+        console.log('canvas reset');
         drawResults = false;
         if (!videoReset) {
             try {

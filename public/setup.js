@@ -2,7 +2,7 @@ const mic = new Tone.UserMedia();
 mic.output._unmutedVolume = 10;
 console.log(mic);
 const panner = new Tone.Panner(0);
-const volume = new Tone.Volume(40).toDestination();
+const volume = new Tone.Volume(50).toDestination();
 const meter = new Tone.Meter();
 const pitchShift = new Tone.PitchShift();
 pitchShift.pitch = 0;
@@ -14,6 +14,7 @@ reverb.connect(panner);
 panner.connect(volume);
 
 function loadAssets() {
+    alarm = new Tone.Player('assets/alarm.mp3').toDestination();
     sound1 = new Tone.Player('assets/businessLunch.mp3').toDestination();
     sound1.volume = -96;
     sound2 = new Tone.Player('assets/morningMood.mp3').toDestination();

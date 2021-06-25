@@ -20,21 +20,21 @@ function keyPressed() {
             console.log('scene ' + currentScene);
             checkScene();
         }
-        if (keyCode === 49) {
-            videoToLoad = 'Katie';
-        }
-        if (keyCode === 50) {
-            videoToLoad = 'Will';
-        }
-        if (keyCode === 51) {
-            videoToLoad = 'Cat';
-        }
-        if (keyCode === 52) {
-            videoToLoad = 'Mfon';
-        }
-        if (keyCode === 53) {
-            videoToLoad = 'Elvin';
-        }
+        // if (keyCode === 49) {
+        //     videoToLoad = 'Katie';
+        // }
+        // if (keyCode === 50) {
+        //     videoToLoad = 'Will';
+        // }
+        // if (keyCode === 51) {
+        //     videoToLoad = 'Cat';
+        // }
+        // if (keyCode === 52) {
+        //     videoToLoad = 'Mfon';
+        // }
+        // if (keyCode === 53) {
+        //     videoToLoad = 'Elvin';
+        // }
         if (keyCode === 65) {
             console.log('a was pressed');
             panner.pan.rampTo(-1, 0);

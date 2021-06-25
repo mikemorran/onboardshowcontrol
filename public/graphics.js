@@ -86,7 +86,7 @@ function drawGraphics() {
         textSize(144);
         stroke(255);
         fill(255);
-        text(result, 0, height/2 - 72, width);
+        text(result, 0, 288, width);
     }
     if (startLights) { 
         let soundLvl = meter.getValue();

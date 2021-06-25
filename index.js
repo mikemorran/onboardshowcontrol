@@ -179,7 +179,7 @@ function checkScene(currentScene) {
         clearInterval(interval4);
         clearInterval(interval5);
     }
-    if (currentScene === 11) {
+    if (currentScene === 11 || currentScene === 25) {
         for (i = 0; i < friendlyNames.length; i++) {
             client.publish('zigbee2mqtt/' + friendlyNames[i] + '/set', '{"brightness" : 254, "color":{"r":253,"g":244,"b":220}, "transition" : 1}');
         }
@@ -209,7 +209,7 @@ function checkScene(currentScene) {
             }
         }
     }
-    if (currentScene === 16 || currentScene === 20 || currentScene === 23) {
+    if (currentScene === 16 || currentScene === 20 || currentScene === 24) {
         hueOutput = JSON.stringify({"r": 255, "g": 255, "b": 255});
         console.log(hueOutput);
         for (i = 0; i < friendlyNames.length; i++) {
@@ -227,7 +227,7 @@ function checkScene(currentScene) {
             }
         }
     }
-    if (currentScene === 18 || currentScene === 22) {
+    if (currentScene === 18 || currentScene === 23) {
         hueOutput = JSON.stringify({"r": 66, "g": 96, "b": 245});
         console.log(hueOutput);
         for (i = 0; i < friendlyNames.length; i++) {
@@ -254,10 +254,15 @@ function checkScene(currentScene) {
         }
         setIntervalEpicHue(epicHue, 2000, 12);
     }
-    if (currentScene === 24) {
+    if (currentScene === 26) {
+        for (i = 0; i < friendlyNames.length; i++) {
+            client.publish('zigbee2mqtt/' + friendlyNames[i] + '/set', '{"brightness" : 1, "color":{"r":253,"g":244,"b":220}, "transition" : 3}');
+        }
+    }
+    if (currentScene === 28) {
         hueOutput = JSON.stringify({"r": 255, "g": 255, "b": 255});
         for (i = 0; i < friendlyNames.length; i++) {
-            client.publish('zigbee2mqtt/'+ friendlyNames[i] +'/set', '{"brightness" : 0, "color" : ' + hueOutput+ ', "transition" : 4}');
+            client.publish('zigbee2mqtt/'+ friendlyNames[i] +'/set', '{"brightness" : 0, "color" : ' + hueOutput+ '}');
         }
     }
 }
