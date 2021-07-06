@@ -6,7 +6,7 @@ let currentScene = 0;
 let windowLoaded = false;
 let micOpen = false;
 let videoDraw = false;
-let sound1, sound2, sound3;
+let sound1, sound2, sound3, sound4;
 let p3q1, p3q2, p3q3, p3q4;
 let videoToLoad = "Emeril Lagasse's Power Air Fryer 360";
 let vid;
@@ -62,7 +62,7 @@ let utterances = [
     "Your brain activity is too high",
     "Please continue to face the camera so that your cooking progress can be logged.",
     " ",
-    "You have failed to complete the morning routines named: High-Intensity-Interval-Training, Mindful-Affirmations, and Art-ful Healthy Cooking. Unfortunately, your consistency benefit has been reset to zero. Your next reward will be at 21 days of completion. See you tomorrow."
+    "You have failed to complete the morning routines named: High-Intensity-Interval-Training, Mindful-Affirmations, and Art-ful Healthy Cooking. You have been given your third strike. Unfortunately, your consistency benefit has been reset to zero. Your next reward will be at 21 days of completion. See you tomorrow."
 ];
 let SSUtterances = [];
 let utteranceTimeoutCount = 0;

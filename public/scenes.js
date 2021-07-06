@@ -126,6 +126,7 @@ function checkScene() {
     }
     //Chaos sound
     if (currentScene === 14) {
+        p3q1.volume.linearRampTo(15, 0);
         p3q1.start();
         startLights = false;
         draw();
@@ -173,7 +174,7 @@ function checkScene() {
     }
     //Epic sound
     if (currentScene === 21) {
-        p3q3.volume.linearRampTo(-5, 0)
+        p3q3.volume.linearRampTo(0, 0)
         startlights = false;
         p3q3.start();
         setTimeout(() => {
@@ -241,6 +242,8 @@ function checkScene() {
         videoDraw = false;
         endingCardDraw = true;
         endingCardDrawFadeup = true;
+        sound4.volume.linearRampTo(-30, 0);
+        sound4.start();
     }
     //Timeout Clearance 
     if (currentScene !== 10) {

@@ -91,7 +91,7 @@ function drawGraphics() {
     if (endingCardDrawFadeup) {
         intervalID = setInterval(() => {
             if (opacity < 255) {
-                opacity += 3;
+                opacity += 5;
                 console.log('opacity: ' + opacity);
             } else {
                 clearInterval(intervalID);
