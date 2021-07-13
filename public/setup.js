@@ -14,12 +14,8 @@ reverb.connect(panner);
 panner.connect(volume);
 
 function loadAssets() {
-    alarm = new Tone.Player('assets/alarm.mp3').toDestination();
-    sound1 = new Tone.Player('assets/businessLunch.mp3').toDestination();
+    sound1 = new Tone.Player('assets/openingsound.mp3').toDestination();
     sound1.volume = -96;
-    sound2 = new Tone.Player('assets/morningMood.mp3').toDestination();
-    sound3 = new Tone.Player('assets/workoutMusic.mp3').toDestination();
-    sound4 = new Tone.Player('assets/autocorrect.mp3').toDestination();
     p3q1 = new Tone.Player('assets/P3Q1.mp3').toDestination();
     p3q2 = new Tone.Player('assets/P3Q2.mp3').toDestination();
     p3q3 = new Tone.Player('assets/P3Q3.mp3').toDestination();
