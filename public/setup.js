@@ -44,12 +44,4 @@ function setup() {
 
     //Setup Sound
     loadAssets();
-
-    //Setup Speech Synthesis
-    setupSpeechSynth();
-
-    w = width + 16;
-    dx = (TWO_PI / period) * xspacing;
-    yvalues = new Array(floor(w / xspacing));
-    console.log(yvalues);
 }

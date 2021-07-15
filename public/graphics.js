@@ -53,7 +53,7 @@ function drawGraphics() {
     }
     if (startLights) { 
         let soundLvl = meter.getValue();
-        // console.log(soundLvl);
+        console.log(soundLvl);
         if (soundLvl < threshold && !exhaleSent && counter % 20 === 0) {
             console.log('sending exhale');
             //send exhale, set exhaleSent to true

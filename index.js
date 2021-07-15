@@ -10,7 +10,8 @@ server.listen(port, () => {
 let mqtt = require('mqtt');
 let client = mqtt.connect('mqtt://169.254.122.202:1883');
 
-let friendlyNames = ['0x0017880109ceac0b', '0x0017880109ceafc8', '0x0017880109ce6533', '0x0017880109d12442'];
+let friendlyNames = ['0x0017880109ceac0b', '0x0017880109ceafc8'];
+//let friendlyNames = ['0x0017880109ceac0b', '0x0017880109ceafc8', '0x0017880109ce6533', '0x0017880109d12442'];
 // let friendlyNames = ['0x0017880109ce6533', '0x0017880109d12442'];
 
 client.on('connect', function () {
@@ -68,7 +69,7 @@ function checkScene(currentScene) {
     //Pre show lights
     if (currentScene === 0) {
         for (i = 0; i < friendlyNames.length; i++) {
-            client.publish('zigbee2mqtt/' + friendlyNames[i] + '/set', '{"brightness" : 254, "color":{"r":253,"g":244,"b":220}}');
+            client.publish('zigbee2mqtt/' + friendlyNames[i] + '/set', '{"brightness" : 254, "color":{"r":255,"g":233,"b":33}}');
         }
     }
     //Cue 1 lights

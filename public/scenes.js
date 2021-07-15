@@ -10,7 +10,7 @@ function checkScene() {
         titleCardDraw = true;
         mic.close();
         sound1.volume.linearRampTo(-200, 0);
-        sound1.volume.linearRampTo(-20, 5);
+        sound1.volume.linearRampTo(-10, 5);
         sound1.start();
         sound1.loop = true;
         videoDraw = false;
@@ -22,8 +22,6 @@ function checkScene() {
             titleCardDraw = false;
         }, 6000);
         sound1.volume.linearRampTo(-96, 5);
-        sound2.stop();
-        sound2.volume.linearRampTo(0, 0);
         setTimeout(() => {
             sound1.stop();
         }, 8000);
@@ -35,7 +33,7 @@ function checkScene() {
     }
     //Chaos sound
     if (currentScene === 3) {
-        p3q1.volume.linearRampTo(15, 0);
+        p3q1.volume.linearRampTo(0, 0);
         p3q1.start();
         startLights = false;
         draw();
@@ -57,7 +55,7 @@ function checkScene() {
     //Play first memory transition and start memory sound
     if (currentScene === 7) {
         p3q2.volume.linearRampTo(-200, 0);
-        threshold = -65;
+        threshold = -45;
         startLights = false;
         p3q2.start();
         p3q2.loop = true;
