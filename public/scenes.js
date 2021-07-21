@@ -1,30 +1,32 @@
 function checkScene() {
     //Load Show
     if (currentScene === 0) {
-        titleCardDraw = false;
+        titleCard1Draw = true;
+        titleCard2Draw = false;
         sound1.stop();
     }
     //Pre Show Sound
     if (currentScene === 1) {
         opacity = 255;
-        titleCardDraw = true;
+        titleCard1Draw = false;
+        titleCard2Draw = true;
         mic.close();
-        sound1.volume.linearRampTo(-200, 0);
-        sound1.volume.linearRampTo(-10, 5);
-        sound1.start();
-        sound1.loop = true;
+        // sound1.volume.linearRampTo(-200, 0);
+        // sound1.volume.linearRampTo(-10, 5);
+        // sound1.start();
+        // sound1.loop = true;
         videoDraw = false;
     }
     //Pre Show Sound Fade Out, Video Start
     if (currentScene === 2) {
         titleCardDrawFadeout = true;
         setTimeout(() => {
-            titleCardDraw = false;
+            titleCard2Draw = false;
         }, 6000);
-        sound1.volume.linearRampTo(-96, 5);
-        setTimeout(() => {
-            sound1.stop();
-        }, 8000);
+        // sound1.volume.linearRampTo(-96, 5);
+        // setTimeout(() => {
+        //     sound1.stop();
+        // }, 8000);
         videoDraw = false;
         setTimeout(() => {
             videoDraw = true;
@@ -33,7 +35,7 @@ function checkScene() {
     }
     //Chaos sound
     if (currentScene === 3) {
-        p3q1.volume.linearRampTo(0, 0);
+        p3q1.volume.linearRampTo(10, 0);
         p3q1.start();
         startLights = false;
         draw();
@@ -55,7 +57,7 @@ function checkScene() {
     //Play first memory transition and start memory sound
     if (currentScene === 7) {
         p3q2.volume.linearRampTo(-200, 0);
-        threshold = -45;
+        threshold = -40;
         startLights = false;
         p3q2.start();
         p3q2.loop = true;

@@ -2,7 +2,7 @@ const mic = new Tone.UserMedia();
 mic.output._unmutedVolume = 10;
 console.log(mic);
 const panner = new Tone.Panner(0);
-const volume = new Tone.Volume(50).toDestination();
+const volume = new Tone.Volume(50);
 const meter = new Tone.Meter();
 const pitchShift = new Tone.PitchShift();
 pitchShift.pitch = 0;

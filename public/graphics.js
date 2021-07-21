@@ -1,6 +1,6 @@
 function drawGraphics() {
     background(0);
-    if (titleCardDraw) {
+    if (titleCard1Draw) {
         textAlign(CENTER, TOP);
         textFont(font);
         stroke(255, 255, 255, opacity);
@@ -14,6 +14,24 @@ function drawGraphics() {
         text('Please take a seat...', 0, height/2 + 100, width);
         pop();
     }
+    if (titleCard2Draw) {
+        textAlign(CENTER, TOP);
+        textFont(font);
+        stroke(255, 255, 255, opacity);
+        fill(255, 255, 255, opacity);
+        push();
+        textSize(72);
+        text('Please maximize the volume on the avatar named "Smart-Home"', 0, height/2 - 200, width);
+        pop();
+        push();
+        textSize(72);
+        text('&', 0, height/2, width);
+        pop();
+        push();
+        textSize(72);
+        text('Turn the sound on your headset/computer to full', 0, height/2 + 100, width);
+        pop();
+    }
     if (titleCardDrawFadeout) {
         intervalID = setInterval(() => {
             if (opacity > 0) {
@@ -21,7 +39,8 @@ function drawGraphics() {
                 console.log('opacity: ' + opacity);
             } else {
                 clearInterval(intervalID);
-                titleCardDraw = false;
+                titleCard1Draw = false;
+                titleCard2Draw = false;
             }
         }, 50);
         titleCardDrawFadeout = false;
