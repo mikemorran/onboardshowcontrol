@@ -13,7 +13,7 @@ let buffering = false;
 let startLights;
 let counter = 0;
 let exhaleSent = true;
-let threshold = -20;
+let threshold = -8;
 let videoReset = false;
 let font;
 let titleCard1Draw = true;

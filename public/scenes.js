@@ -57,7 +57,7 @@ function checkScene() {
     //Play first memory transition and start memory sound
     if (currentScene === 7) {
         p3q2.volume.linearRampTo(-200, 0);
-        threshold = -40;
+        threshold = -18;
         startLights = false;
         p3q2.start();
         p3q2.loop = true;

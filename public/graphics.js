@@ -21,7 +21,7 @@ function drawGraphics() {
         fill(255, 255, 255, opacity);
         push();
         textSize(72);
-        text('Please maximize the volume on the avatar named "Smart-Home"', 0, height/2 - 200, width);
+        text('Please maximize the volume on the avatar named "Smart-Home"', 0, height/2 - 300, width);
         pop();
         push();
         textSize(72);
