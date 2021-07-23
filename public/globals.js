@@ -16,7 +16,7 @@ let exhaleSent = true;
 let threshold = -8;
 let videoReset = false;
 let font;
-let titleCard1Draw = true;
+let titleCard1Draw = false;
 let titleCard2Draw = false;
 let titleCardDrawFadeout = false;
 let opacity = 255;
