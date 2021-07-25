@@ -11,7 +11,7 @@ function drawGraphics() {
         pop();
         push();
         textSize(64);
-        text('Please take a seat...', 0, height/2 + 100, width);
+        text('Please take a seat and mute your microphone...', 0, height/2 + 100, width);
         pop();
     }
     if (titleCard2Draw) {

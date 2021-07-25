@@ -9,10 +9,10 @@ function checkScene() {
         opacity = 255;
         titleCard1Draw = true;
         mic.close();
-        sound1.volume.linearRampTo(-200, 0);
-        sound1.volume.linearRampTo(-10, 5);
-        sound1.start();
-        sound1.loop = true;
+        // sound1.volume.linearRampTo(-200, 0);
+        // sound1.volume.linearRampTo(-10, 5);
+        // sound1.start();
+        // sound1.loop = true;
         videoDraw = false;
     }
     //Pre Show Sound Fade Out, Video Start
@@ -21,10 +21,10 @@ function checkScene() {
         setTimeout(() => {
             titleCard1Draw = false;
         }, 6000);
-        sound1.volume.linearRampTo(-96, 5);
-        setTimeout(() => {
-            sound1.stop();
-        }, 8000);
+        // sound1.volume.linearRampTo(-96, 5);
+        // setTimeout(() => {
+        //     sound1.stop();
+        // }, 8000);
         videoDraw = false;
         setTimeout(() => {
             videoDraw = true;
